@@ -12,12 +12,14 @@ def array_info(arr):
           arr.shape)  # array shape, This is a tuple of integers indicating the size of the array in each dimension
     print("dimensions:", arr.ndim)  # the number of axes (dimensions) of the array.
     print("size:",
-          arr.size, '\n')  # the total number of elements of the array. This is equal to the product of the elements of shape.
+          arr.size,
+          '\n')  # the total number of elements of the array. This is equal to the product of the elements of shape.
 
 
 my_arr = create_array(15)
-array_info(my_arr)
 
-my_arr = my_arr.reshape(3, 5)
+# fixed reshape
+print('Fixed reshape:\n', my_arr.reshape(3, 5), '\n')
 
-array_info(my_arr)
+# “Automatic” Reshaping
+print('“Automatic” Reshaping:\n', my_arr.reshape(5, -1))
